@@ -45,7 +45,6 @@ namespace RazorLightTemplateRendererTesty.Succes
 ";
 
             //act
-            //var rendered = await this.TemplateRenderer.RenderTemplateAsync(template, model);
             using MemoryStream stream = new(Encoding.UTF8.GetBytes(template));
             string hash = Encoding.UTF8.GetString(await MD5.Create().ComputeHashAsync(stream));
             var rendered = await engine.CompileRenderStringAsync(hash, template, model);
