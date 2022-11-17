@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  SOLUTION: . RazorLightTemplateRendererTesty.sln
+  SOLUTION: RazorLightTemplateRendererTesty.sln
 
 jobs:
   build:
