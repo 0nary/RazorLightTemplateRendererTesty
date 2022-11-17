@@ -10,7 +10,7 @@ namespace RazorLightTemplateRendererTesty
     {
 
         [Fact]
-        public async Task Test1Async()//2.0.0-rc.3
+        public async Task Test1Async()
         {
             //arrange
             var engine = new RazorLightEngineBuilder()
