@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace RazorLightTemplateRendererTesty
+namespace RazorLightTemplateRendererTesty.Succes
 {
 
     public class TestModel
@@ -34,10 +34,10 @@ namespace RazorLightTemplateRendererTesty
 
             var model = new TestModel();
             var template = @"
-    @model Neuroglia.UnitTests.Cases.Data.TestModel;
+    @model RazorLightTemplateRendererTesty.Succes.TestModel;
 
     <select>
-        @foreach(string option in this.Model.Options)
+        @foreach(string option in this.Model?.Options)
         {
             <option value=""@option"">@option</option>
         }
