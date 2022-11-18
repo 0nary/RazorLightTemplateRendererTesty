@@ -7,8 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace RazorLightTemplateRendererTesty.Fail
+namespace RazorLightTemplateRendererTesty.Fail.Base
 {
+    public class TestModel
+    {
+
+        public List<string> Options { get; set; } = new() { "option1", "option2" };
+
+    }
+
 
     public class RazorLightTemplateRendererTestsBase
     {
@@ -27,7 +34,7 @@ namespace RazorLightTemplateRendererTesty.Fail
 
             var model = new TestModel();
             var template = @"
-    @model RazorLightTemplateRendererTesty.TestModel;
+    @model RazorLightTemplateRendererTesty.Fail.Base.TestModel;
 
     <select>
         @foreach(string option in this.Model.Options)

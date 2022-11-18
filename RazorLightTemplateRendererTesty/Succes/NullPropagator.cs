@@ -7,8 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace RazorLightTemplateRendererTesty.Succes
+namespace RazorLightTemplateRendererTesty.Succes.NullPropagator
 {
+    public class TestModel
+    {
+        public List<string> Options { get; set; } = new() { "option1", "option2" };
+
+    }
 
     public class RazorLightTemplateRendererTestsNullPropagator
     {
@@ -27,7 +32,7 @@ namespace RazorLightTemplateRendererTesty.Succes
 
             var model = new TestModel();
             var template = @"
-    @model RazorLightTemplateRendererTesty.TestModel;
+    @model RazorLightTemplateRendererTesty.Succes.NullPropagator.TestModel;
 
     <select>
         @foreach(string option in this.Model?.Options)
