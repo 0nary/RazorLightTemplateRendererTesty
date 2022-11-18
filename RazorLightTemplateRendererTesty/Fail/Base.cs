@@ -2,7 +2,6 @@ using FluentAssertions;
 using RazorLight;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,10 +27,10 @@ namespace RazorLightTemplateRendererTesty.Fail.Base
             var engine = new RazorLightEngineBuilder()
             // required to have a default RazorLightProject type,
             // but not required to create a template from string.
-                .SetOperatingAssembly(Assembly.GetCallingAssembly())
-            .UseFileSystemProject(Directory.GetCurrentDirectory())
-            .UseMemoryCachingProvider()
-            .Build();
+                .UseEmbeddedResourcesProject(typeof(RazorLightTemplateRendererTestsBase))
+                 .SetOperatingAssembly(typeof(RazorLightTemplateRendererTestsBase).Assembly)
+                .UseMemoryCachingProvider()
+                .Build();
 
             var model = new TestModel();
             var template = @"
