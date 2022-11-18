@@ -10,14 +10,7 @@ using Xunit;
 namespace RazorLightTemplateRendererTesty.Succes
 {
 
-    public class TestModel
-    {
-
-        public List<string> Options { get; set; } = new() { "option1", "option2" };
-
-    }
-
-    public class RazorLightTemplateRendererTests
+    public class RazorLightTemplateRendererTestsNullPropagator
     {
 
         [Fact]
@@ -27,14 +20,14 @@ namespace RazorLightTemplateRendererTesty.Succes
             var engine = new RazorLightEngineBuilder()
             // required to have a default RazorLightProject type,
             // but not required to create a template from string.
-                .UseEmbeddedResourcesProject(typeof(RazorLightTemplateRendererTests))
-                 .SetOperatingAssembly(typeof(RazorLightTemplateRendererTests).Assembly)
+                .UseEmbeddedResourcesProject(typeof(RazorLightTemplateRendererTestsNullPropagator))
+                 .SetOperatingAssembly(typeof(RazorLightTemplateRendererTestsNullPropagator).Assembly)
                 .UseMemoryCachingProvider()
                 .Build();
 
             var model = new TestModel();
             var template = @"
-    @model RazorLightTemplateRendererTesty.Succes.TestModel;
+    @model RazorLightTemplateRendererTesty.TestModel;
 
     <select>
         @foreach(string option in this.Model?.Options)
