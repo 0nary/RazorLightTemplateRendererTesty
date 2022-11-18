@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace RazorLightTemplateRendererTesty.Fail.PostCall
+namespace RazorLightTemplateRendererTesty.Succes.PostCall
 {
     public class TestModel
     {
@@ -34,7 +34,7 @@ namespace RazorLightTemplateRendererTesty.Fail.PostCall
 
             var model = new TestModel();
             var template = @"
-    @model RazorLightTemplateRendererTesty.Fail.PostCall.TestModel;
+    @model RazorLightTemplateRendererTesty.Succes.PostCall.TestModel;
 
     <select>
         @foreach(string option in this.Model.Options)
